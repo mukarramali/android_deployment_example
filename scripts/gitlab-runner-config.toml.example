@@ -1,0 +1,17 @@
+concurrent = 1
+check_interval = 0
+
+[[runners]]
+  name = "with new docker image"
+  url = "https://commit.elitmus.in/"
+  token = "e70aee681711454d2ff6b7c49dbdd0"
+  executor = "docker"
+  [runners.docker]
+    tls_verify = false
+    image = "mukarramali98/androidbase"
+    privileged = false
+    disable_cache = false
+    volumes = ["/cache", "/root/dallas/opt/output:/opt/output"]
+    shm_size = 0
+    pull_policy = "if-not-present"
+  [runners.cache]

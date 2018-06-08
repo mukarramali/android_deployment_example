@@ -1,0 +1,5 @@
+key_store:
+  key: /dallas_offline/dallas_offline.jks
+  alias: key0
+  store_password: adminguru)(*
+  key_password: elitmus123

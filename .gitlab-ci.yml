@@ -1,0 +1,28 @@
+image: mukarramali98/androidbase 
+
+before_script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+
+cache:
+  paths:
+    - .gradle/wrapper
+    - .gradle/caches
+
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - ENV=production ./gradlew assembleDebug
+    - ENV=production ./gradlew assembleRelease
+
+after_script:
+  - cp app/build/outputs/apk/debug/app-debug.apk /opt/output/
+  - if [ -f '$PWD/app/build/outputs/apk/release/' ]; then
+      cp app/build/outputs/apk/release/app-release.apk /opt/output/ ;
+      cp app/build/outputs/apk/release/output.json /opt/output/ ; fi
+  - if [ -f '$PWD/app/release/' ]; then
+    cp app/release/app-release.apk /opt/output/ ;
+    cp app/release/output.json /opt/output/ ; fi
