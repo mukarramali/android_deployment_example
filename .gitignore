@@ -14,7 +14,5 @@
 app/src/main/res/raw/todo.txt
 app/release/*
 app/build/outputs/apk/*
-config.yaml
-dallas_offline.jks
 .s3cfg
 app/src/main/res/raw/awsconfiguration.json

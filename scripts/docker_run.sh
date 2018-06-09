@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -xeuo pipefail
 
-app_name=dallas_offline
+app_name=app_name
 container_name=androidcontainer
 
 if [ ! "$(docker ps -q -f name=${container_name})" ]; then

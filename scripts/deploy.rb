@@ -11,7 +11,7 @@ Usage:
        ruby deploy.rb -s <s3ConfigFile> [options]
 EOS
   opt :s3_config, 's3 config file.', type: :string, short: '-s'
-  opt :app_name, 'App name', type: :string, default: 'dallas_offline', short: '-a'
+  opt :app_name, 'App name', type: :string, default: 'xyz', short: '-a'
   opt :bucket, 'Bucket name', type: :string, short: '-b'
   opt :tag, 'Push with a new version tag', type: :boolean, default: true, short: '-t'
 end
